@@ -8,3 +8,5 @@ plan/
 /.claude/
 /target-*/
 /craft-fonts/
+/artifacts/
+__pycache__/

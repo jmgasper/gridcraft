@@ -247,6 +247,9 @@ fn home_fonts(file: &str) -> String {
     format!("{home}/Library/Fonts/{file}")
 }
 
+/// Haiku and air/OS: the system's fonts (Noto), TrueType in `ttfonts`, OpenType in `otfonts`.
+const HAIKU_FONTS: &str = "/boot/system/data/fonts";
+
 /// Candidate font files per role, in preference order.
 fn candidates(role: &str) -> Vec<(String, u32)> {
     let mac_sys = "/System/Library/Fonts";
@@ -271,6 +274,7 @@ fn candidates(role: &str) -> Vec<(String, u32)> {
             add("/usr/share/fonts/google-noto/NotoSans-Regular.ttf".into(), 0);
             add("/usr/share/fonts/dejavu-sans-fonts/DejaVuSans.ttf".into(), 0);
             add("/usr/share/fonts/liberation-sans-fonts/LiberationSans-Regular.ttf".into(), 0);
+            add(format!("{HAIKU_FONTS}/ttfonts/NotoSans-Regular.ttf"), 0);
         }
         "ui-bold" => {
             add(format!("{mac_sys}/HelveticaNeue.ttc"), 1);
@@ -283,8 +287,15 @@ fn candidates(role: &str) -> Vec<(String, u32)> {
             add("/usr/share/fonts/google-noto/NotoSans-Bold.ttf".into(), 0);
             add("/usr/share/fonts/dejavu-sans-fonts/DejaVuSans-Bold.ttf".into(), 0);
             add("/usr/share/fonts/liberation-sans-fonts/LiberationSans-Bold.ttf".into(), 0);
+            add(format!("{HAIKU_FONTS}/ttfonts/NotoSans-Bold.ttf"), 0);
         }
         "cell" | "cell-bold" | "cell-italic" | "cell-bold-italic" => {
+            let haiku = match role {
+                "cell" => "NotoSans-Regular.ttf",
+                "cell-bold" => "NotoSans-Bold.ttf",
+                "cell-italic" => "NotoSans-Italic.ttf",
+                _ => "NotoSans-BoldItalic.ttf",
+            };
             let (carlito, calibri_win, calibri_mac, arial_mac, arial_win, lib, dejavu) = match role {
                 "cell" => {
                     ("Carlito-Regular.ttf", "calibri.ttf", "Calibri.ttf", "Arial.ttf", "arial.ttf", "LiberationSans-Regular.ttf", "DejaVuSans.ttf")
@@ -332,6 +343,7 @@ fn candidates(role: &str) -> Vec<(String, u32)> {
                 add(format!("{d}/liberation/{lib}"), 0);
                 add(format!("{d}/dejavu/{dejavu}"), 0);
             }
+            add(format!("{HAIKU_FONTS}/ttfonts/{haiku}"), 0);
         }
         "serif" => {
             add(format!("{mac_sup}/Times New Roman.ttf"), 0);
@@ -340,6 +352,7 @@ fn candidates(role: &str) -> Vec<(String, u32)> {
                 add(format!("{d}/liberation/LiberationSerif-Regular.ttf"), 0);
                 add(format!("{d}/dejavu/DejaVuSerif.ttf"), 0);
             }
+            add(format!("{HAIKU_FONTS}/ttfonts/NotoSerif-Regular.ttf"), 0);
         }
         "mono" => {
             add(format!("{mac_sys}/SFNSMono.ttf"), 0);
@@ -348,6 +361,7 @@ fn candidates(role: &str) -> Vec<(String, u32)> {
             for d in lin {
                 add(format!("{d}/dejavu/DejaVuSansMono.ttf"), 0);
             }
+            add(format!("{HAIKU_FONTS}/ttfonts/NotoSansMono-Regular.ttf"), 0);
         }
         _ => {}
     }
@@ -531,6 +545,7 @@ fn cjk_han_japanese() -> Vec<(String, u32)> {
         v.push((format!("{d}/NotoSansCJKjp-Regular.otf"), 0));
         v.push((format!("{d}/NotoSansCJK-Regular.ttc"), 0)); // JP face
     }
+    v.push((format!("{HAIKU_FONTS}/otfonts/NotoSansCJKjp-VF.otf"), 0));
     v
 }
 
@@ -593,6 +608,7 @@ fn thai() -> Vec<(String, u32)> {
         v.push((format!("{d}/tlwg/Garuda.ttf"), 0));
         v.push((format!("{d}/garuda/Garuda.ttf"), 0));
     }
+    v.push((format!("{HAIKU_FONTS}/ttfonts/NotoSansThai-Regular.ttf"), 0));
     v
 }
 
@@ -642,6 +658,7 @@ fn symbols() -> Vec<(String, u32)> {
     ] {
         v.push((format!("{d}/DejaVuSans.ttf"), 0));
     }
+    v.push((format!("{HAIKU_FONTS}/ttfonts/NotoSansSymbols-Regular.ttf"), 0));
     v
 }
 
@@ -660,6 +677,7 @@ fn symbols_more() -> Vec<(String, u32)> {
     ] {
         v.push((format!("{d}/NotoSansSymbols2-Regular.ttf"), 0));
     }
+    v.push((format!("{HAIKU_FONTS}/ttfonts/NotoSansSymbols2-Regular.ttf"), 0));
     v
 }
 

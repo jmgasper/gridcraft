@@ -1600,6 +1600,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "gridcraft-haiku"
+version = "0.7.0"
+dependencies = [
+ "cc",
+ "egui",
+ "gridcraft-engine",
+ "gridcraft-ui-egui",
+ "image",
+ "log",
+ "rayon",
+ "serde_json",
+]
+
+[[package]]
 name = "gridcraft-mcp"
 version = "0.7.0"
 dependencies = [

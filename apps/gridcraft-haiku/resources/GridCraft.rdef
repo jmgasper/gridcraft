@@ -1,0 +1,35 @@
+// GridCraft's Haiku resources: signature, launch behaviour, version, icon and
+// the spreadsheet types Tracker offers it for. Compiled with rc and added with
+// xres by tools/haiku/package.sh.
+
+resource app_signature "application/x-vnd.storytold-GridCraft";
+
+// Each workbook opened from Tracker starts a window of its own process, as on
+// the other desktops; files opened while it runs arrive as B_REFS_RECEIVED.
+resource app_flags B_MULTIPLE_LAUNCH;
+
+resource app_version {
+	major = 0,
+	middle = 7,
+	minor = 0,
+	variety = B_APPV_DEVELOPMENT,
+	internal = 1,
+	short_info = "GridCraft 0.7.0",
+	long_info = "GridCraft for air/OS: an open-source spreadsheet for Excel workbooks (MIT or Apache-2.0)."
+};
+
+resource vector_icon {
+	import "GridCraft.hvif"
+};
+
+resource file_types message {
+	"types" = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+	"types" = "application/vnd.ms-excel.sheet.macroEnabled.12",
+	"types" = "application/vnd.ms-excel.sheet.binary.macroEnabled.12",
+	"types" = "application/vnd.ms-excel",
+	"types" = "application/vnd.oasis.opendocument.spreadsheet",
+	"types" = "text/csv",
+	"types" = "text/tab-separated-values",
+	"types" = "text/plain",
+	"types" = "application/json"
+};

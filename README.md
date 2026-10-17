@@ -270,6 +270,12 @@ handling again for troubleshooting.
 |---|---|
 | x86_64 | `gridcraft-<ver>-freebsd-x86_64.tar.gz` |
 
+### air/OS and Haiku
+
+| Build | File | Notes |
+|---|---|---|
+| x86_64 | `gridcraft-<ver>-x86_64.hpkg` | Install with `pkgman install`; GridCraft in a native window, with Haiku's file panels, clipboard and file types. Built by `tools/haiku/package.sh`; see [docs/haiku.md](docs/haiku.md) |
+
 ### Web (WebAssembly)
 
 | Build | File | Notes |
