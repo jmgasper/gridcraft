@@ -197,8 +197,13 @@ OPTIONS:
             }
         }
         // Files named on the command line open as File › Open opens them; Tracker's arrive as
-        // messages (`shell`).
+        // messages (`shell`). Never the program itself, which a launcher may name.
+        let exe = std::env::current_exe().and_then(std::fs::canonicalize).ok();
         for f in &args.files {
+            if exe.is_some() && std::fs::canonicalize(f).ok() == exe {
+                log::warn!("not opening {f}: it is GridCraft itself");
+                continue;
+            }
             app.open_path(f);
         }
         let mut shell = shell::Shell::new(app, ctx, dialogs, scale);
@@ -239,6 +244,12 @@ OPTIONS:
         }
         if prefs_enabled() {
             services::claim_document_types();
+        }
+        // The rasteriser's workers: up to 8 (more cost more in waking than they save on a
+        // frame), named for the system's process lists.
+        let workers = std::thread::available_parallelism().map_or(4, |n| n.get().clamp(1, 8));
+        if let Err(e) = rayon::ThreadPoolBuilder::new().num_threads(workers).thread_name(|i| format!("GridCraft raster {i}")).build_global() {
+            log::warn!("rasteriser threads: {e}");
         }
         let scale = host::ui_scale();
         let px = |v: f32| v * scale;

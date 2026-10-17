@@ -159,15 +159,23 @@ Push(const GcEvent& event, const std::string& text = std::string())
 }
 
 
+// The paths of a message's refs, one per line. As documents, without the
+// application's own executable: a launch through a link to it can hand it its
+// own ref, and that is never a workbook.
 static std::string
-PathsOf(const BMessage* message)
+PathsOf(const BMessage* message, bool documents = false)
 {
+	app_info self;
+	bool knowSelf = documents && be_app->GetAppInfo(&self) == B_OK;
 	std::string paths;
 	entry_ref ref;
 	for (int32 i = 0; message->FindRef("refs", i, &ref) == B_OK; i++) {
 		BEntry entry(&ref, true);
+		entry_ref resolved;
 		BPath path;
-		if (entry.GetPath(&path) != B_OK)
+		if (entry.GetRef(&resolved) != B_OK || entry.GetPath(&path) != B_OK)
+			continue;
+		if (knowSelf && resolved == self.ref)
 			continue;
 		if (!paths.empty())
 			paths += '\n';
@@ -309,7 +317,7 @@ public:
 			GcEvent event = MakeEvent(GC_DROPPED_FILES);
 			event.x = where.x;
 			event.y = where.y;
-			std::string paths = PathsOf(message);
+			std::string paths = PathsOf(message, true);
 			event.text_len = paths.size();
 			Push(event, paths);
 			return;
@@ -594,7 +602,7 @@ public:
 			return;
 		}
 		GcEvent event = MakeEvent(GC_OPEN_FILES);
-		std::string paths = PathsOf(message);
+		std::string paths = PathsOf(message, true);
 		event.text_len = paths.size();
 		if (!paths.empty())
 			Push(event, paths);
