@@ -244,7 +244,12 @@ impl Rasterizer {
         // A few bands (a caret, a cell, a hover) are drawn here: waking every worker for them
         // costs more processor time than it saves.
         let changed: Vec<Option<[usize; 4]>> = if todo.iter().filter(|t| **t).count() > SERIAL_BANDS {
-            self.buf.par_chunks_mut(BAND * w).zip(self.prev.par_chunks_mut(BAND * w)).enumerate().map(|(band, (rows, prev))| draw(band, rows, prev)).collect()
+            self.buf
+                .par_chunks_mut(BAND * w)
+                .zip(self.prev.par_chunks_mut(BAND * w))
+                .enumerate()
+                .map(|(band, (rows, prev))| draw(band, rows, prev))
+                .collect()
         } else {
             self.buf.chunks_mut(BAND * w).zip(self.prev.chunks_mut(BAND * w)).enumerate().map(|(band, (rows, prev))| draw(band, rows, prev)).collect()
         };
