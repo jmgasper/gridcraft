@@ -1,5 +1,7 @@
 # GridCraft roadmap
 
+**air/OS icon update, 2026-10-26:** original Haiku-style native vector icon, with reproducible HVIF/SVG generation and a package revision bump. Validated with Haiku resource compilation and native renders from 16 to 256px; see [native icon](docs/haiku.md#native-application-icon-2026-10-26).
+
 **Stage: alpha** · next: beta, ~25 points of "ready for real work" and ~160–240 h away
 
 > **Last reviewed:** 2026-10-11 · **Last updated:** 2026-10-12 · **Change:** minor (rows auto-fit oversized fonts on open and whole-row/column formatting) · **Target:** Microsoft Excel (Microsoft 365)

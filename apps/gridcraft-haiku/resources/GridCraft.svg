@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="s0" gradientUnits="userSpaceOnUse" x1="-64" y1="0" x2="64" y2="0" gradientTransform="matrix(0.2891 0.0000 -0.0000 0.2891 42.5000 52.0000)">
+      <stop offset="0.000" stop-color="#000000" stop-opacity="0.255"/>
+      <stop offset="0.749" stop-color="#000000" stop-opacity="0.157"/>
+      <stop offset="1.000" stop-color="#000000" stop-opacity="0.000"/>
+    </linearGradient>
+    <linearGradient id="s1" gradientUnits="userSpaceOnUse" x1="-64" y1="0" x2="64" y2="0" gradientTransform="matrix(0.2969 0.3906 -0.3906 0.2969 29.0000 31.0000)">
+      <stop offset="0.000" stop-color="#509b71" stop-opacity="1.000"/>
+      <stop offset="1.000" stop-color="#27533f" stop-opacity="1.000"/>
+    </linearGradient>
+    <linearGradient id="s3" gradientUnits="userSpaceOnUse" x1="-64" y1="0" x2="64" y2="0" gradientTransform="matrix(0.2969 0.3906 -0.3906 0.2969 29.0000 31.0000)">
+      <stop offset="0.000" stop-color="#fffff6" stop-opacity="1.000"/>
+      <stop offset="1.000" stop-color="#d8e5d8" stop-opacity="1.000"/>
+    </linearGradient>
+    <linearGradient id="s4" gradientUnits="userSpaceOnUse" x1="-64" y1="0" x2="64" y2="0" gradientTransform="matrix(0.2969 0.3906 -0.3906 0.2969 29.0000 31.0000)">
+      <stop offset="0.000" stop-color="#a5d8ad" stop-opacity="1.000"/>
+      <stop offset="1.000" stop-color="#439262" stop-opacity="1.000"/>
+    </linearGradient>
+    <linearGradient id="s7" gradientUnits="userSpaceOnUse" x1="-64" y1="0" x2="64" y2="0" gradientTransform="matrix(0.2969 0.3906 -0.3906 0.2969 29.0000 31.0000)">
+      <stop offset="0.000" stop-color="#e1f3bd" stop-opacity="1.000"/>
+      <stop offset="1.000" stop-color="#a3ca78" stop-opacity="1.000"/>
+    </linearGradient>
+    <linearGradient id="s10" gradientUnits="userSpaceOnUse" x1="-64" y1="0" x2="64" y2="0" gradientTransform="matrix(0.2969 0.3906 -0.3906 0.2969 29.0000 31.0000)">
+      <stop offset="0.000" stop-color="#a9d9b0" stop-opacity="1.000"/>
+      <stop offset="1.000" stop-color="#4e996a" stop-opacity="1.000"/>
+    </linearGradient>
+    <linearGradient id="s11" gradientUnits="userSpaceOnUse" x1="-64" y1="0" x2="64" y2="0" gradientTransform="matrix(0.2969 0.3906 -0.3906 0.2969 29.0000 31.0000)">
+      <stop offset="0.000" stop-color="#9cd3a4" stop-opacity="1.000"/>
+      <stop offset="1.000" stop-color="#387c54" stop-opacity="1.000"/>
+    </linearGradient>
+    <linearGradient id="s12" gradientUnits="userSpaceOnUse" x1="-64" y1="0" x2="64" y2="0" gradientTransform="matrix(0.2969 0.3906 -0.3906 0.2969 29.0000 31.0000)">
+      <stop offset="0.000" stop-color="#f3d987" stop-opacity="1.000"/>
+      <stop offset="1.000" stop-color="#c69432" stop-opacity="1.000"/>
+    </linearGradient>
+  </defs>
+  <path d="M 7.000 43.000 L 46.000 57.000 L 62.000 57.000 L 32.000 43.000 L 7.000 43.000 Z" fill="url(#s0)"/>
+  <path d="M 46.000 21.000 L 50.000 17.000 L 50.000 53.000 L 46.000 57.000 L 46.000 21.000 Z" fill="url(#s1)"/>
+  <path d="M 46.000 21.000 L 50.000 17.000 L 50.000 53.000 L 46.000 57.000 L 46.000 21.000 Z" fill="none" stroke="#17191c" stroke-width="2.00" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M 7.000 7.000 L 46.000 20.647 L 46.000 56.647 L 7.000 43.000 L 7.000 7.000 Z" fill="url(#s3)"/>
+  <path d="M 7.000 7.000 L 46.000 20.647 L 46.000 56.647 L 7.000 43.000 L 7.000 7.000 Z" fill="none" stroke="#17191c" stroke-width="2.00" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M 7.000 7.000 L 46.000 20.647 L 46.000 28.647 L 7.000 15.000 L 7.000 7.000 Z" fill="url(#s4)"/>
+  <path d="M 7.000 15.000 L 14.000 17.451 L 14.000 45.451 L 7.000 43.000 L 7.000 15.000 Z" fill="#b4cdbb"/>
+  <path d="M 7.000 15.000 L 46.000 28.647" fill="none" stroke="#738d7c" stroke-width="1.00" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M 7.000 24.000 L 46.000 37.647" fill="none" stroke="#738d7c" stroke-width="1.00" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M 7.000 33.000 L 46.000 46.647" fill="none" stroke="#738d7c" stroke-width="1.00" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M 14.000 17.451 L 14.000 45.451" fill="none" stroke="#738d7c" stroke-width="1.00" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M 25.000 21.304 L 25.000 49.304" fill="none" stroke="#738d7c" stroke-width="1.00" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M 36.000 25.147 L 36.000 53.147" fill="none" stroke="#738d7c" stroke-width="1.00" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M 25.000 30.304 L 36.000 34.147 L 36.000 43.147 L 25.000 39.304 L 25.000 30.304 Z" fill="url(#s7)"/>
+  <path d="M 25.000 30.304 L 36.000 34.147 L 36.000 43.147 L 25.000 39.304 L 25.000 30.304 Z" fill="none" stroke="#285d42" stroke-width="2.00" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M 34.000 40.451 L 38.000 41.853 L 38.000 45.853 L 34.000 44.451 L 34.000 40.451 Z" fill="#285d42"/>
+  <path d="M 11.000 12.402 L 23.000 16.598" fill="none" stroke="#f7fff3" stroke-width="2.00" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M 36.000 47.000 L 42.000 49.000 L 42.000 59.000 L 36.000 57.000 L 36.000 47.000 Z" fill="url(#s10)"/>
+  <path d="M 36.000 47.000 L 42.000 49.000 L 42.000 59.000 L 36.000 57.000 L 36.000 47.000 Z" fill="none" stroke="#17191c" stroke-width="2.00" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M 43.000 42.000 L 49.000 44.000 L 49.000 59.000 L 43.000 57.000 L 43.000 42.000 Z" fill="url(#s11)"/>
+  <path d="M 43.000 42.000 L 49.000 44.000 L 49.000 59.000 L 43.000 57.000 L 43.000 42.000 Z" fill="none" stroke="#17191c" stroke-width="2.00" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M 50.000 35.000 L 56.000 37.000 L 56.000 59.000 L 50.000 57.000 L 50.000 35.000 Z" fill="url(#s12)"/>
+  <path d="M 50.000 35.000 L 56.000 37.000 L 56.000 59.000 L 50.000 57.000 L 50.000 35.000 Z" fill="none" stroke="#17191c" stroke-width="2.00" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>
